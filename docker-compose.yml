@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    logging:
+      driver: none
+  my-service:
+    build: .
+    ports: 
+      - 8087:8087
+    env_file:
+      - .env
